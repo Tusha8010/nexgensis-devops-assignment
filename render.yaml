@@ -2,24 +2,18 @@ services:
   - type: web
     name: nexgensis-backend
     env: docker
-    repo: https://github.com/Tusha8010/nexgensis-devops-assignment.git
-    dockerfilePath: backend/Dockerfile
-    branch: main
     plan: free
+    dockerfilePath: ./backend/Dockerfile
     autoDeploy: true
-    envVars:
-      - key: PORT
-        value: 8000
+    healthCheckPath: /api/status/
+    ports:
+      - 8000
 
   - type: web
     name: nexgensis-frontend
     env: docker
-    repo: https://github.com/Tusha8010/nexgensis-devops-assignment.git
-    dockerfilePath: frontend/Dockerfile
-    branch: main
     plan: free
+    dockerfilePath: ./frontend/Dockerfile
     autoDeploy: true
-    envVars:
-      - key: PORT
-        value: 80
-
+    ports:
+      - 80
