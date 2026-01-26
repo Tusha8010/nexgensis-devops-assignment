@@ -6,8 +6,6 @@ services:
     dockerfilePath: ./backend/Dockerfile
     autoDeploy: true
     healthCheckPath: /api/status/
-    ports:
-      - 8000
 
   - type: web
     name: nexgensis-frontend
@@ -15,5 +13,3 @@ services:
     plan: free
     dockerfilePath: ./frontend/Dockerfile
     autoDeploy: true
-    ports:
-      - 80
